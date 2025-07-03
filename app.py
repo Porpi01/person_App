@@ -4,9 +4,13 @@ import pandas as pd
 import pickle
 from datetime import datetime
 import json
+import os
+from dotenv import load_dotenv
 
 
-conexion = "postgresql://user:QaJwixwfNPNuBWWk4zxsIXMqWeOnh3JM@dpg-d1j5ps6mcj7s73a8p09g-a.oregon-postgres.render.com/dbname_vzb4"
+load_dotenv()
+
+conexion = os.getenv("DATABASE_URL")
 engine= create_engine(conexion)
 
 with open("personality.pkl", 'rb') as file:
