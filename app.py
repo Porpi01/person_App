@@ -6,7 +6,7 @@ from datetime import datetime
 import json
 
 
-conexion = "postgresql://postgres:postgres@35.195.142.111/postgres"
+conexion = "postgresql://user:QaJwixwfNPNuBWWk4zxsIXMqWeOnh3JM@dpg-d1j5ps6mcj7s73a8p09g-a.oregon-postgres.render.com/dbname_vzb4"
 engine= create_engine(conexion)
 
 with open("personality.pkl", 'rb') as file:
