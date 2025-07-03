@@ -28,7 +28,7 @@ def create_predictions_table():
     with engine.connect() as conn:
         conn.execute(create_table_sql)
         conn.commit()
-        print("✅ Tabla 'predictions' verificada o creada.")
+        print("Tabla 'predictions' verificada o creada.")
 
 
 create_predictions_table()
