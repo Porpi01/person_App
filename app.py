@@ -127,5 +127,5 @@ def result():
 
     return render_template("result.html", prediction=record['personality'], data=data)
 
-# if __name__ == "__main__": para poder desplegar 
-app.run()
+if __name__ == "__main__": 
+    app.run()
