@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6e1ec4 0%, #195ed4 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .form-wrapper {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 3.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s ease-in-out;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-wrapper:hover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .title {
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+            color: #222;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .label {
+            color: #444;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .field.is-inline-flex {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        input.input,
+        select {
+            border: 2px solid #ddd;
+            box-shadow: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1rem;
+        }
+
+        input.input:focus,
+        select:focus {
+            border-color: #ff3860;
+            box-shadow: 0 0 8px #ff3860;
+            outline: none;
+        }
+
+        .select select {
+            padding-right: 2.5rem;
+            color: #ff3860;
+            font-weight: 600;
+        }
+
+        .button.is-danger {
+            background-color: #ff3860;
+            border-color: transparent;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(255, 56, 96, 0.5);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button.is-danger:hover,
+        .button.is-danger:focus {
+            background-color: #ff1e3c;
+            box-shadow: 0 6px 20px rgba(255, 30, 60, 0.7);
+        }
+
+        .field.has-text-centered {
+            margin-top: 2.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="form-wrapper">
+                    <h1 class="title has-text-centered">Descubre tu personalidad</h1>
+
+                    <form method="POST" action="/predict">
+                        <div class="columns is-multiline">
+                            <!-- Columna 1 -->
+                            <div class="column is-half">
+                                <div class="field">
+                                    <label class="label">Tiempo que disfrutas a solas</label>
+                                    <div class="control">
+                                        <input class="input is-rounded" type="number" step="any" min="0"
+                                            name="Time_spent_Alone" required>
+                                    </div>
+                                </div>
+
+                                <div class="field is-inline-flex">
+                                    <label class="label">¿Te da miedo hablar en público?</label>
+                                    <div class="select">
+                                        <select name="Stage_fear" required>
+                                            <option value="Yes">Sí</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">¿Con qué frecuencia vas a eventos?</label>
+                                    <div class="control">
+                                        <input class="input is-rounded" type="number" step="any" min="0"
+                                            name="Social_event_attendance" required>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">¿Sales con frecuencia?</label>
+                                    <div class="control">
+                                        <input class="input is-rounded" type="number" step="any" min="0"
+                                            name="Going_outside" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Columna 2 -->
+                            <div class="column is-half">
+                                <div class="field is-inline-flex">
+                                    <label class="label">¿Te agotas tras socializar?
+                                    </label>
+                                    <div class="select">
+                                        <select name="Drained_after_socializing" required>
+                                            <option value="Yes">Sí</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">¿Cuántos amigos cercanos tienes?</label>
+                                    <div class="control">
+                                        <input class="input is-rounded" type="number" step="any" min="0"
+                                            name="Friends_circle_size" required>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">¿Qué tan seguido publicas en redes?</label>
+                                    <div class="control">
+                                        <input class="input is-rounded" type="number" step="any" min="0"
+                                            name="Post_frequency" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field has-text-centered mt-4">
+                            <button class="button is-danger is-rounded is-medium">Descubrir</button>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

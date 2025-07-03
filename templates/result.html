@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6e1ec4 0%, #195ed4 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .result-wrapper {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 3.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .title {
+            color: #222;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .field {
+            margin-bottom: 1rem;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #444;
+        }
+
+        .value {
+            color: #111;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="result-wrapper">
+                <h1 class="title">Tu tipo de personalidad es:</h1>
+                <h2 class="subtitle has-text-centered has-text-danger">{{ 'Extrovertido' if prediction == '1' else
+                    'Introvertido' if prediction == '0' else 'Desconocido' }}
+                </h2>
+
+                <hr>
+
+                <h2 class="subtitle">Datos enviados:</h2>
+
+                {% for key, value in data.items() %}
+                <div class="field" style="display: flex; justify-content: space-between; align-items: center;">
+                    <p class="label">{{ key.replace("_", " ") | capitalize }}:</p>
+                    <p class="value">{{ value }}</p>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="field has-text-centered mt-4">
+                <a href="predict" class="button is-danger is-rounded is-medium">Atrás</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
