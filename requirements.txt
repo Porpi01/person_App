@@ -5,3 +5,4 @@ SQLAlchemy== 2.0.41
 notebook
 pandas
 flask
+psycopg2
