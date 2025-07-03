@@ -7,3 +7,4 @@ pandas
 flask
 psycopg2-binary
 scikit-learn
+dotenv
