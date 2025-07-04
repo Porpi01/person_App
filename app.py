@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
+DATABASE_URL = "postgresql://user:QaJwixwfNPNuBWWk4zxsIXMqWeOnh3JM@dpg-d1j5ps6mcj7s73a8p09g-a.oregon-postgres.render.com/dbname_vzb4"
 
 conexion = os.getenv("DATABASE_URL")
 engine= create_engine(conexion)
